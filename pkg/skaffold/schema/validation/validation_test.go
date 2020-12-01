@@ -295,6 +295,19 @@ func TestValidateNetworkMode(t *testing.T) {
 			},
 		},
 		{
+			description: "container",
+			artifacts: []*latest.Artifact{
+				{
+					ImageName: "image/container",
+					ArtifactType: latest.ArtifactType{
+						DockerArtifact: &latest.DockerArtifact{
+							NetworkMode: "Container:container-id",
+						},
+					},
+				},
+			},
+		},
+		{
 			description: "none",
 			artifacts: []*latest.Artifact{
 				{
